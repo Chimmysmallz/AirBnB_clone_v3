@@ -119,5 +119,5 @@ def updates_place(place_id):
                 obj.latitude = request.json['latitude']
             if 'longitude' in request.get_json():
                 obj.longitude = request.json['longitude']
-    storage.save()
-    return jsonify(place_obj[0]), 200
+            obj.save()
+    return jsonify(obj.to_dict()), 200
